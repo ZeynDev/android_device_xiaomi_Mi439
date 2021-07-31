@@ -23,6 +23,9 @@ function blob_fixup() {
                 exit;
             fi
             ;;
+        vendor/lib/hw/camera.msm8937.so)
+            "${PATCHELF}" --remove-needed "libwa_megface.so" "${2}"
+            ;;
     esac
 }
 
